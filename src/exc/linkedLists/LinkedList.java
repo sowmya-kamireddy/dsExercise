@@ -13,6 +13,7 @@ public class LinkedList {
 	
 	Node head;
 	
+	// Insert at Head
 	public void add(int value){
 		System.out.println("Add :"+value);
 		Node temp = new Node(value);
@@ -20,6 +21,7 @@ public class LinkedList {
 		head = temp;
 	}
 	
+	// Delete at Head
 	public void remove(){
 		if(head==null){
 			System.out.println("List is Empty");
@@ -28,6 +30,7 @@ public class LinkedList {
 		head = head.next;
 	}
 	
+	// Delete a node given a value
 	public void remove(int value){
 		if(head==null)
 			return;
@@ -47,6 +50,7 @@ public class LinkedList {
 		}
 	}
 	
+	// Delete a node at specified position
 	public void removeNthPosition(int position){
 		if(head==null)
 			return;
@@ -65,7 +69,8 @@ public class LinkedList {
 		}	
 	}
 	
-	public int iterativeAppSize(){
+	// Get list size in iterative approach
+	public int iterativeSize(){
 		int size = 0;
 		Node temp = head;
 		while(temp!=null){
@@ -75,16 +80,18 @@ public class LinkedList {
 		return size;
 	}
 	
-	public int recurAppSize(){
-		return subAppSize(head);
+	// Get list size in recursive approach
+	public int recursiveSize(){
+		return subRecurSize(head);
 	}
 	
-	private int subAppSize(Node n){
+	private int subRecurSize(Node n){
 		if(n!=null)
-			return 1+subAppSize(n.next);
+			return 1+subRecurSize(n.next);
 		else return 0;
 	}
 	
+	// Search specific value from the list in iterative approach
 	public boolean iterativeSearch(int value){
 		Node temp=head;
 		while(temp!=null){
@@ -96,6 +103,7 @@ public class LinkedList {
 		return false;
 	}
 	
+	// Search specific value from the list in recursive approach
 	public boolean recursiveSearch(int value){
 		return subSearch(head,value);
 	}
@@ -109,6 +117,7 @@ public class LinkedList {
 			return subSearch(n.next,value);
 	}
 	
+	// Return node value at specified index
 	public int nodeAtIndex(int index){
 		Node temp= head;
 		for(int i=0;temp!=null;i++){

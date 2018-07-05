@@ -35,7 +35,7 @@ public class Main {
 		list.add(3);
 		list.print();
 		System.out.println("Iterative approach size");
-		int size = list.iterativeAppSize();
+		int size = list.iterativeSize();
 		System.out.println(size);
 		System.out.println("Remove 2nd Pos");
 		list.removeNthPosition(2);
@@ -43,7 +43,7 @@ public class Main {
 		list.add(2);
 		list.print();
 		System.out.println("Recurrsive approach size");
-		size = list.recurAppSize();
+		size = list.recursiveSize();
 		System.out.println(size);
 		System.out.println("Remove 1st Pos");
 		list.removeNthPosition(1);
